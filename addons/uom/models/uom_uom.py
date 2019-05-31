@@ -147,7 +147,7 @@ class UoM(models.Model):
             return qty
         self.ensure_one()
         if self.category_id.id != to_unit.category_id.id:
-            if raise_if_failure:
+            if raise_if_failure and False:
                 raise UserError(_('The unit of measure %s defined on the order line doesn\'t belong to the same category than the unit of measure %s defined on the product. Please correct the unit of measure defined on the order line or on the product, they should belong to the same category.') % (self.name, to_unit.name))
             else:
                 return qty
